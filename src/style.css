@@ -27,10 +27,6 @@
   --font-script: "Shrikhand", Georgia, serif;
   --font-serif: "Gelasio", Georgia, serif;
   --font-body: "Open Sans", Arial, sans-serif;
-
-  /* layout */
-  --picture-w: 11.75rem;
-  --line-x: 1.5rem; /* timeline position inside the experiences block */
 }
 
 @page {

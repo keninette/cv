@@ -3,16 +3,26 @@
     <span class="name__last">GAUTHIER HUGENDOBLER</span>
     <span class="name__first">DELPHINE</span>
   </h1>
+  <p class="top__role">Développeuse full stack</p>
 
   <div class="top__body">
     <figure class="picture">
       <!-- viewBox units ≈ pixels of the original 922px-wide page -->
       <svg class="picture__art" viewBox="0 110 443 413" aria-hidden="true">
         <defs>
-          <!-- arc for the curved title: centre (240,340), r=165, from -95° to +115° (0° = top) -->
-          <path id="title-arc" d="M 75.6 354.4 A 165 165 0 1 1 389.5 409.7" />
+          <!-- regular pentagon: centre (320,340), radius 240,
+               turned 12° clockwise around its centre (first number of rotate) -->
+          <polygon
+            id="shape"
+            points="320,100 548.3,265.8 461.1,534.2 178.9,534.2 91.7,265.8"
+            transform="rotate(12 320 340)"
+          />
+          <!-- same shape, used to cut the portrait -->
+          <clipPath id="shape-clip">
+            <use href="#shape" />
+          </clipPath>
         </defs>
-        <circle cx="255" cy="340" r="188" fill="#fff" />
+        <use href="#shape" class="picture__shape" fill="#fff" />
         <polygon
           class="blob blob--yellow"
           points="95,250 245,185 250,523 120,523"
@@ -23,24 +33,14 @@
         />
         <image
           href="assets/avatar.png"
-          x="125"
-          y="185"
+          x="180"
+          y="214"
           width="280"
           height="353"
           preserveAspectRatio="xMidYMax meet"
+          clip-path="url(#shape-clip)"
           onerror="this.remove()"
         />
-        <text class="picture__title">
-          <textPath
-            href="#title-arc"
-            startOffset="50%"
-            text-anchor="middle"
-            textLength="595"
-            lengthAdjust="spacing"
-          >
-            DÉVELOPPEUSE FULL STACK
-          </textPath>
-        </text>
       </svg>
       <figcaption class="picture__caption">Photo non contractuelle</figcaption>
     </figure>

@@ -23,13 +23,13 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-left: calc(var(--line-x) + 1.125rem);
+  padding-left: 2.625rem;
 }
 /* dashed gradient line */
 .timeline::before {
   content: "";
   position: absolute;
-  inset: 1rem auto 0 var(--line-x);
+  inset: 1rem auto 0 1.5rem;
   width: 2px;
   transform: translateX(-50%);
   background: linear-gradient(var(--tl-top), var(--tl-bottom));
