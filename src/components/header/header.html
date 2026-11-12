@@ -1,0 +1,133 @@
+<header class="top">
+  <h1 class="name">
+    <span class="name__last">GAUTHIER HUGENDOBLER</span>
+    <span class="name__first">DELPHINE</span>
+  </h1>
+
+  <div class="top__body">
+    <figure class="picture">
+      <!-- viewBox units ≈ pixels of the original 922px-wide page -->
+      <svg class="picture__art" viewBox="0 110 443 413" aria-hidden="true">
+        <defs>
+          <!-- arc for the curved title: centre (240,340), r=165, from -95° to +115° (0° = top) -->
+          <path id="title-arc" d="M 75.6 354.4 A 165 165 0 1 1 389.5 409.7" />
+        </defs>
+        <circle cx="255" cy="340" r="188" fill="#fff" />
+        <polygon
+          class="blob blob--yellow"
+          points="95,250 245,185 250,523 120,523"
+        />
+        <polygon
+          class="blob blob--teal"
+          points="300,210 400,330 440,523 150,523 260,470"
+        />
+        <image
+          href="assets/avatar.png"
+          x="125"
+          y="185"
+          width="280"
+          height="353"
+          preserveAspectRatio="xMidYMax meet"
+          onerror="this.remove()"
+        />
+        <text class="picture__title">
+          <textPath
+            href="#title-arc"
+            startOffset="50%"
+            text-anchor="middle"
+            textLength="595"
+            lengthAdjust="spacing"
+          >
+            DÉVELOPPEUSE FULL STACK
+          </textPath>
+        </text>
+      </svg>
+      <figcaption class="picture__caption">Photo non contractuelle</figcaption>
+    </figure>
+
+    <section class="contact">
+      <span class="contact__strip" aria-hidden="true"></span>
+
+      <div class="contact__row">
+        <i
+          class="contact__icon fa-solid fa-comment-dots"
+          style="color: #3f4fa8"
+        ></i>
+        <div>
+          <p>gauthier.delphine@protonmail.com</p>
+          <p class="flags">
+            <svg
+              viewBox="0 0 3 2"
+              preserveAspectRatio="none"
+              aria-label="Français"
+            >
+              <rect width="1" height="2" fill="#002654" />
+              <rect x="1" width="1" height="2" fill="#fff" />
+              <rect x="2" width="1" height="2" fill="#CE1126" />
+            </svg>
+            <svg
+              viewBox="0 0 60 30"
+              preserveAspectRatio="none"
+              aria-label="Anglais"
+            >
+              <clipPath id="uk">
+                <path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z" />
+              </clipPath>
+              <rect width="60" height="30" fill="#012169" />
+              <path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6" />
+              <path
+                d="M0,0L60,30M60,0L0,30"
+                clip-path="url(#uk)"
+                stroke="#C8102E"
+                stroke-width="4"
+              />
+              <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10" />
+              <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6" />
+            </svg>
+            <svg
+              viewBox="0 0 3 2"
+              preserveAspectRatio="none"
+              aria-label="Espagnol"
+            >
+              <rect width="3" height="2" fill="#AA151B" />
+              <rect y=".5" width="3" height="1" fill="#F1BF00" />
+            </svg>
+            <svg
+              viewBox="0 0 16 10"
+              preserveAspectRatio="none"
+              aria-label="Suédois"
+            >
+              <rect width="16" height="10" fill="#006AA7" />
+              <rect x="5" width="2" height="10" fill="#FECC00" />
+              <rect y="4" width="16" height="2" fill="#FECC00" />
+            </svg>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact__row">
+        <i
+          class="contact__icon fa-solid fa-map-location-dot"
+          style="color: #e2675f"
+        ></i>
+        <div>
+          <p>Villeurbanne</p>
+          <p class="transport">
+            <i class="fa-solid fa-bicycle"></i>
+            <i class="fa-solid fa-bus"></i>
+            <i class="fa-solid fa-person-walking"></i>
+            <i class="fa-solid fa-car-side"></i>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact__row">
+        <i class="contact__icon fa-solid fa-book" style="color: #5b9bd5"></i>
+        <div>
+          <p>License RPI (Alternance 2015 - Isitech - Lyon)</p>
+          <p>BTS SIO (Alternance 2013 - Isitech - Lyon)</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</header>

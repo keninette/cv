@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV Delphine Gauthier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gelasio:wght@400&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/header/header.css" />
+    <link rel="stylesheet" href="components/experiences/experiences.css" />
+    <link rel="stylesheet" href="components/know-me/know-me.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div data-include="components/header/header.html"></div>
+      <div data-include="components/experiences/experiences.html"></div>
+    </div>
+
+    <div class="page">
+      <div data-include="components/know-me/know-me.html"></div>
+    </div>
+
+    <!-- Replaces each [data-include] placeholder with the content of its file.
+     Needs a local server (e.g. VS Code Live Server): fetch() is blocked on file:// pages. -->
+    <script>
+      document
+        .querySelectorAll("[data-include]")
+        .forEach(async (placeholder) => {
+          const response = await fetch(placeholder.dataset.include);
+          placeholder.outerHTML = await response.text();
+        });
+    </script>
+  </body>
+</html>

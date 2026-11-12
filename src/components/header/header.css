@@ -1,0 +1,139 @@
+/* ============================================================
+   ROW 1 – header: name, then picture + contact side by side
+   ============================================================ */
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  isolation: isolate;
+}
+
+/* background only behind the picture column, with slanted edges */
+.top::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto -2.5rem 0;
+  width: 15.25rem;
+  background: var(--header-bg);
+  clip-path: polygon(0 0, 94% 0, 100% 100%, 0 96%);
+}
+
+.top__body {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- name ---------- */
+.name {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+}
+.name__last {
+  font-size: 1.875rem;
+  color: var(--indigo);
+}
+.name__first {
+  align-self: flex-end;
+  font-size: 1.625rem;
+  color: transparent;
+  -webkit-text-stroke: 1.3px var(--indigo);
+}
+
+/* ---------- picture ---------- */
+.picture {
+  flex: 0 0 var(--picture-w);
+}
+
+.picture__art {
+  display: block;
+  width: 100%;
+}
+
+.picture__caption {
+  text-align: right;
+  padding: 0.125rem 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 0.6rem;
+  font-style: italic;
+  color: #888;
+}
+
+.blob--yellow {
+  fill: var(--yellow);
+}
+
+.blob--teal {
+  fill: var(--teal);
+}
+
+/* sizes in SVG viewBox units, scaled with the picture */
+.picture__title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  letter-spacing: 1px;
+  fill: var(--indigo);
+  stroke: #fff;
+  stroke-width: 6px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+/* ---------- contact ---------- */
+.contact {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 1rem 1rem 1rem 2.5rem;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+.contact__strip {
+  position: absolute;
+  inset: 1rem auto 1rem 2.5rem;
+  width: 2.5rem;
+  background: var(--yellow);
+  transform: skewY(-4deg);
+}
+.contact__row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.contact__icon {
+  flex: 0 0 2.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.flags {
+  display: flex;
+  gap: 0.375rem;
+  margin-top: 0.375rem;
+}
+.flags svg {
+  width: 1.625rem;
+  height: 1.125rem;
+}
+.flags svg:last-child {
+  width: 1.125rem;
+  height: 0.75rem;
+  align-self: center;
+}
+
+.transport {
+  display: flex;
+  gap: 0.625rem;
+  font-size: 1.1rem;
+  color: #333;
+}

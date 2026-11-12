@@ -1,0 +1,110 @@
+/* ============================================================
+   CV – Delphine Gauthier
+   Two A4 pages.
+   Units: rem for sizes and spacing (1rem = 16px, the browser default),
+   px for hairlines (borders, strokes), mm only for the paper sheet itself.
+   ============================================================ */
+
+:root {
+  /* palette */
+  --header-bg: #d5d5f4;
+  --lavender-bg: #eeeefb;
+  --card-bg: #eef5f8;
+  --indigo: #4a4bb8;
+  --salmon: #ee6a62;
+  --salmon-soft: #f9c9c4;
+  --yellow: #f6ee9c;
+  --teal: #a8cdd2;
+  --text: #555;
+  --text-strong: #333;
+
+  /* timeline gradient (top -> bottom) */
+  --tl-top: #f08a73;
+  --tl-bottom: #9b5fd6;
+
+  /* fonts */
+  --font-display: "Alfa Slab One", Georgia, serif;
+  --font-script: "Shrikhand", Georgia, serif;
+  --font-serif: "Gelasio", Georgia, serif;
+  --font-body: "Open Sans", Arial, sans-serif;
+
+  /* layout */
+  --picture-w: 11.75rem;
+  --line-x: 1.5rem; /* timeline position inside the experiences block */
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  background: #888;
+  font-family: var(--font-body);
+  color: var(--text);
+  font-size: 0.83rem;
+  line-height: 1.38;
+}
+
+/* one A4 sheet */
+.page {
+  width: 210mm;
+  height: 297mm;
+  margin: 2.5rem auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.3);
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+  .page + .page {
+    break-before: page;
+  }
+}
+
+strong {
+  color: var(--text-strong);
+}
+
+/* ---------- shadowed script titles ---------- */
+.script-title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--indigo);
+  font-size: 1.65rem;
+  line-height: 1.1;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+.script-title::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  transform: translateY(0.22em);
+  color: #fff;
+  z-index: -1;
+}
