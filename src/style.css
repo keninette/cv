@@ -7,7 +7,7 @@
 
 :root {
   /* palette */
-  --header-bg: #d5d5f4;
+  --header-bg: #c3b1e1;
   --lavender-bg: #eeeefb;
   --card-bg: #eef5f8;
   --indigo: #4a4bb8;
@@ -15,6 +15,7 @@
   --salmon-soft: #f9c9c4;
   --yellow: #f6ee9c;
   --teal: #a8cdd2;
+  --lemon: #fff5ba;
   --text: #555;
   --text-strong: #333;
 
@@ -23,14 +24,11 @@
   --tl-bottom: #9b5fd6;
 
   /* fonts */
-  --font-display: "Alfa Slab One", Georgia, serif;
+  --font-name: "Anton", Impact, sans-serif;
+  --font-display: "Caprasimo", Georgia, serif;
   --font-script: "Shrikhand", Georgia, serif;
   --font-serif: "Gelasio", Georgia, serif;
   --font-body: "Open Sans", Arial, sans-serif;
-
-  /* layout */
-  --picture-w: 11.75rem;
-  --line-x: 1.5rem; /* timeline position inside the experiences block */
 }
 
 @page {
