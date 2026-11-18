@@ -16,10 +16,9 @@
   --header-bg: #c3b1e1;
   --mint: #a8e6cf;
   --pink: #ffb3c6;
-  --blue: #a0d8ef;
+  --blue: #b0e0f3;
   --lemon: #fff5ba;
-  --yellow: #f6ee9c; /* hidden header blobs */
-  --teal: #a8cdd2; /* hidden header blobs */
+  --sun: #ffe27a; /* deeper yellow, for yellow on white */
 
   /* fonts */
   --font-name: "Anton", Impact, sans-serif;
@@ -58,12 +57,27 @@ body {
   width: 210mm;
   height: 297mm;
   margin: 2.5rem auto;
-  background: var(--paper);
+  /* pastel triangles in the corners (angle of the cut, then colour from
+     the corner up to x% of the diagonal), under light grey confetti */
+  background:
+    url("assets/confetti.svg") 0 0 / 25rem,
+    linear-gradient(225deg, var(--blue) 0 9%, transparent 9%),
+    linear-gradient(315deg, var(--lemon) 0 12%, transparent 12%),
+    var(--paper);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
   box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.3);
+}
+
+/* page 2: other corners and colours */
+.page + .page {
+  background:
+    url("assets/confetti.svg") 0 0 / 25rem,
+    linear-gradient(200deg, var(--pink) 0 11%, transparent 11%),
+    linear-gradient(45deg, var(--mint) 0 14%, transparent 14%),
+    var(--paper);
 }
 
 @media print {

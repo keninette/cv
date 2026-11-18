@@ -30,15 +30,19 @@
       <div data-include="components/know-me/know-me.html"></div>
     </div>
 
-    <!-- Replaces each [data-include] placeholder with the content of its file.
+    <!-- Replaces each [data-include] placeholder with the content of its file,
+     including the placeholders found inside included files (e.g. the header's picture).
      Needs a local server (e.g. VS Code Live Server): fetch() is blocked on file:// pages. -->
     <script>
-      document
-        .querySelectorAll("[data-include]")
-        .forEach(async (placeholder) => {
-          const response = await fetch(placeholder.dataset.include);
-          placeholder.outerHTML = await response.text();
-        });
+      async function include(placeholder) {
+        const response = await fetch(placeholder.dataset.include);
+        const template = document.createElement("template");
+        template.innerHTML = await response.text();
+        template.content.querySelectorAll("[data-include]").forEach(include);
+        placeholder.replaceWith(template.content);
+      }
+
+      document.querySelectorAll("[data-include]").forEach(include);
     </script>
   </body>
 </html>

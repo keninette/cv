@@ -1,67 +1,10 @@
 <header class="top">
-  <!-- Memphis shapes, top right -->
-  <span class="deco top__squiggle" aria-hidden="true">
-    <svg viewBox="0 0 120 30">
-      <path
-        d="M4 15 q14 -14 28 0 t28 0 t28 0 t28 0"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="6"
-        stroke-linecap="round"
-      />
-    </svg>
-  </span>
-  <span class="deco top__triangle" aria-hidden="true">
-    <svg viewBox="0 0 50 44">
-      <polygon points="25,3 47,41 3,41" fill="currentColor" stroke-width="3" />
-    </svg>
-  </span>
-
-  <h1 class="name">
-    <span class="name__last">GAUTHIER HUGENDOBLER</span>
-    <span class="name__first">DELPHINE</span>
-  </h1>
+  <h1 class="name">DELPHINE GAUTHIER HUGENDOBLER</h1>
   <p class="top__role">Développeuse full stack</p>
 
   <div class="top__body">
     <figure class="picture">
-      <!-- viewBox units ≈ pixels of the original 922px-wide page -->
-      <svg class="picture__art" viewBox="0 110 443 413" aria-hidden="true">
-        <defs>
-          <!-- regular pentagon: centre (320,340), radius 240,
-               turned 12° clockwise around its centre (first number of rotate) -->
-          <polygon
-            id="shape"
-            points="320,100 548.3,265.8 461.1,534.2 178.9,534.2 91.7,265.8"
-            transform="rotate(12 320 340)"
-          />
-          <!-- same shape, used to cut the portrait -->
-          <clipPath id="shape-clip">
-            <use href="#shape" />
-          </clipPath>
-        </defs>
-        <!-- pink copy of the shape, shifted down-right like a hard shadow -->
-        <use href="#shape" class="picture__echo" x="22" y="18" />
-        <use href="#shape" class="picture__shape" fill="#fff" />
-        <polygon
-          class="blob blob--yellow"
-          points="95,250 245,185 250,523 120,523"
-        />
-        <polygon
-          class="blob blob--teal"
-          points="300,210 400,330 440,523 150,523 260,470"
-        />
-        <image
-          href="assets/avatar.png"
-          x="180"
-          y="214"
-          width="280"
-          height="353"
-          preserveAspectRatio="xMidYMax meet"
-          clip-path="url(#shape-clip)"
-          onerror="this.remove()"
-        />
-      </svg>
+      <div data-include="assets/picture.svg"></div>
       <figcaption class="picture__caption">*Photo non contractuelle</figcaption>
     </figure>
 
@@ -73,8 +16,9 @@
           <i class="fa-solid fa-address-card"></i>
         </span>
         <div>
+          <p><b>Contact</b></p>
           <p>gauthier.delphine@protonmail.com</p>
-          <p>06 66 66 66 66</p>
+          <p>06 20 41 13 75</p>
         </div>
       </div>
 
@@ -82,53 +26,37 @@
         <span class="contact__icon contact__icon--blue">
           <i class="fa-solid fa-comment-dots"></i>
         </span>
-        <p class="flags">
-          <svg
-            viewBox="0 0 3 2"
-            preserveAspectRatio="none"
-            aria-label="Français"
-          >
-            <rect width="1" height="2" fill="#002654" />
-            <rect x="1" width="1" height="2" fill="#fff" />
-            <rect x="2" width="1" height="2" fill="#CE1126" />
-          </svg>
-          <svg
-            viewBox="0 0 60 30"
-            preserveAspectRatio="none"
-            aria-label="Anglais"
-          >
-            <clipPath id="uk">
-              <path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z" />
-            </clipPath>
-            <rect width="60" height="30" fill="#012169" />
-            <path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6" />
-            <path
-              d="M0,0L60,30M60,0L0,30"
-              clip-path="url(#uk)"
-              stroke="#C8102E"
-              stroke-width="4"
-            />
-            <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10" />
-            <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6" />
-          </svg>
-          <svg
-            viewBox="0 0 3 2"
-            preserveAspectRatio="none"
-            aria-label="Espagnol"
-          >
-            <rect width="3" height="2" fill="#AA151B" />
-            <rect y=".5" width="3" height="1" fill="#F1BF00" />
-          </svg>
-          <svg
-            viewBox="0 0 16 10"
-            preserveAspectRatio="none"
-            aria-label="Suédois"
-          >
-            <rect width="16" height="10" fill="#006AA7" />
-            <rect x="5" width="2" height="10" fill="#FECC00" />
-            <rect y="4" width="16" height="2" fill="#FECC00" />
-          </svg>
-        </p>
+        <div>
+          <p><b>Langues parlées</b></p>
+          <p class="flags">
+            <span class="flags__item"
+              >Français
+              <img
+                class="flags__flag flags__flag--fr"
+                src="assets/flags/fr.svg"
+                alt=""
+              />
+            </span>
+            -
+            <span class="flags__item"
+              >Anglais
+              <img
+                class="flags__flag flags__flag--en"
+                src="assets/flags/en.svg"
+                alt=""
+              />
+            </span>
+            -
+            <span class="flags__item"
+              >Espagnol
+              <img
+                class="flags__flag flags__flag--es"
+                src="assets/flags/es.svg"
+                alt=""
+              />
+            </span>
+          </p>
+        </div>
       </div>
 
       <div class="contact__row">
@@ -136,7 +64,8 @@
           <i class="fa-solid fa-map-location-dot"></i>
         </span>
         <div>
-          <p>Villeurbanne</p>
+          <p><b>Localisation</b></p>
+          <p>Villeurbanne (Flachet)</p>
           <p class="transport">
             <i class="fa-solid fa-bicycle"></i>
             <i class="fa-solid fa-bus"></i>
@@ -151,6 +80,7 @@
           <i class="fa-solid fa-book"></i>
         </span>
         <div>
+          <p><b>Formation</b></p>
           <p>License RPI (Alternance 2015 - Isitech - Lyon)</p>
           <p>BTS SIO (Alternance 2013 - Isitech - Lyon)</p>
         </div>

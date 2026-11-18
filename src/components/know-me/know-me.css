@@ -35,17 +35,3 @@
   background: var(--paper);
   font-size: 1.5rem;
 }
-
-/* Memphis shapes, placed against the page (not the section) */
-.about__squiggle {
-  bottom: 2rem;
-  right: 2rem;
-  width: 7rem;
-  color: var(--pink);
-}
-.about__triangle {
-  bottom: 5rem;
-  left: 2.5rem;
-  width: 3rem;
-  color: var(--blue);
-}

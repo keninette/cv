@@ -1,0 +1,71 @@
+<!-- Avatar inside the pentagon, with a yellow and a green copy of the portrait
+     behind it. Included inline in components/header/header.html (data-include),
+     so it uses the page's CSS (header.css) for its colours and outline. -->
+<!-- viewBox units ≈ pixels of the original 922px-wide page -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="picture__art"
+  viewBox="0 110 443 413"
+  aria-hidden="true"
+>
+  <defs>
+    <!-- regular pentagon: centre (320,340), radius 240,
+         turned 12° clockwise around its centre (first number of rotate) -->
+    <polygon
+      id="shape"
+      points="320,100 548.3,265.8 461.1,534.2 178.9,534.2 91.7,265.8"
+      transform="rotate(12 320 340)"
+    />
+    <!-- same shape, used to cut the portrait -->
+    <clipPath id="shape-clip">
+      <use href="#shape" />
+    </clipPath>
+    <!-- slightly smaller shape (97.4% around the centre, about 5 units
+         inside the edge), so the coloured copies stop inside the outline -->
+    <clipPath id="shape-clip-inner">
+      <use
+        href="#shape"
+        transform="translate(320 340) scale(0.974) translate(-320 -340)"
+      />
+    </clipPath>
+    <!-- the portrait, drawn 3 times below -->
+    <image
+      id="avatar"
+      href="assets/avatar.png"
+      x="180"
+      y="214"
+      width="280"
+      height="353"
+      preserveAspectRatio="xMidYMax meet"
+      onerror="this.remove()"
+    />
+    <!-- fill the portrait's outline with one colour (set in the CSS) -->
+    <filter id="silhouette-sun">
+      <feFlood class="picture__flood picture__flood--sun" />
+      <feComposite in2="SourceAlpha" operator="in" />
+    </filter>
+    <filter id="silhouette-mint">
+      <feFlood class="picture__flood picture__flood--mint" />
+      <feComposite in2="SourceAlpha" operator="in" />
+    </filter>
+  </defs>
+  <use href="#shape" class="picture__shape" fill="#fff" />
+  <!-- yellow and green copies of the portrait, shifted left and right -->
+  <use
+    href="#avatar"
+    x="-16"
+    y="-8"
+    filter="url(#silhouette-sun)"
+    clip-path="url(#shape-clip-inner)"
+  />
+  <use
+    href="#avatar"
+    x="16"
+    y="8"
+    filter="url(#silhouette-mint)"
+    clip-path="url(#shape-clip-inner)"
+  />
+  <use href="#avatar" clip-path="url(#shape-clip)" />
+  <!-- outline drawn last, so nothing covers it -->
+  <use href="#shape" class="picture__outline" />
+</svg>
