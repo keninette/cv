@@ -22,10 +22,12 @@ $out = Join-Path $root "build\CV-GAUTHIER-Delphine.pdf"
 #   --headless=new            no visible window
 #   --disable-gpu             avoids GPU issues in headless mode
 #   --no-pdf-header-footer    no date / title / URL printed in the margins
-#   --virtual-time-budget     waits up to 8 s so Google Fonts and icons are loaded before printing
 #   --allow-file-access-from-files  lets index.html load the components/*.html files from disk
 #   --print-to-pdf            where to write the PDF
+# The browser prints once the page has loaded (fonts, icons, includes and the preloaded
+# background images in index.html). Don't add --virtual-time-budget: it makes the PDF
+# print hang forever with the nested includes.
 # Browser log noise (stderr) is discarded.
 & $browser --headless=new --disable-gpu --no-pdf-header-footer --allow-file-access-from-files `
-  --virtual-time-budget=8000 --print-to-pdf="$out" $src 2>$null | Out-Null
+  --print-to-pdf="$out" $src 2>$null | Out-Null
 Write-Host "PDF written to $out"

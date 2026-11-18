@@ -1,0 +1,6 @@
+<!-- pastel triangles in the corners of page 1 (viewBox = the A4 page in mm):
+     blue top-right, lemon bottom-right. Stretched over the whole page. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 297" preserveAspectRatio="none">
+  <polygon points="164.4,0 210,0 210,45.6" fill="#a0d8ef" />
+  <polygon points="210,236.2 210,297 149.2,297" fill="#fff5ba" />
+</svg>

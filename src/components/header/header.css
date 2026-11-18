@@ -17,10 +17,9 @@
   z-index: -1;
   inset: -1rem auto -1rem 0;
   width: 17rem;
-  /* white dots, 14px apart, on the lavender */
+  /* white dots, drawn once (see dots.svg), so they stay sharp in the PDF */
   background:
-    radial-gradient(rgb(255 255 255 / 0.6) 2px, transparent 2.5px) 0 0 / 14px
-      14px,
+    url("../../assets/dots.svg") 0 0 no-repeat,
     var(--violet);
   /* Cuts the rectangle into a shape. Each point is "x y", in % of the
      rectangle's width / height, starting at the top-left corner (0 0).
@@ -128,8 +127,8 @@
   inset: 0.25rem auto 0.25rem 1.7rem;
   width: 2.5rem;
   border: 2px solid var(--ink);
-  background: repeating-conic-gradient(var(--ink) 0 25%, var(--lemon) 0 50%) 0
-    0 / 14px 14px;
+  /* 7px squares: the 6px checkerboard shown at 70px wide instead of 60px */
+  background: url("../../assets/checkerboard.svg") 0 0 / 70px auto no-repeat;
   transform: skewY(-4deg);
 }
 .contact__row {

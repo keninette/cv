@@ -57,12 +57,11 @@ body {
   width: 210mm;
   height: 297mm;
   margin: 2.5rem auto;
-  /* pastel triangles in the corners (angle of the cut, then colour from
-     the corner up to x% of the diagonal), under light grey confetti */
+  /* pastel corner triangles (SVG, so they stay sharp in the PDF), under light
+     grey confetti */
   background:
-    url("assets/confetti.svg") 0 0 / 25rem,
-    linear-gradient(225deg, var(--blue) 0 9%, transparent 9%),
-    linear-gradient(315deg, var(--lemon) 0 12%, transparent 12%),
+    url("assets/confetti.svg") 0 0 / 100% 100% no-repeat,
+    url("assets/corners-page-1.svg") 0 0 / 100% 100%,
     var(--paper);
   display: flex;
   flex-direction: column;
@@ -74,9 +73,8 @@ body {
 /* page 2: other corners and colours */
 .page + .page {
   background:
-    url("assets/confetti.svg") 0 0 / 25rem,
-    linear-gradient(200deg, var(--pink) 0 11%, transparent 11%),
-    linear-gradient(45deg, var(--mint) 0 14%, transparent 14%),
+    url("assets/confetti.svg") 0 0 / 100% 100% no-repeat,
+    url("assets/corners-page-2.svg") 0 0 / 100% 100%,
     var(--paper);
 }
 

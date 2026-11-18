@@ -1,0 +1,6 @@
+<!-- pastel triangles in the corners of page 2 (viewBox = the A4 page in mm):
+     pink top-right, mint bottom-left. Stretched over the whole page. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 297" preserveAspectRatio="none">
+  <polygon points="97.1,0 210,0 210,41.1" fill="#ffb3c6" />
+  <polygon points="0,226 71,297 0,297" fill="#a8e6cf" />
+</svg>
