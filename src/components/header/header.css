@@ -49,7 +49,20 @@
   line-height: 0.95;
   letter-spacing: 0.1em;
   color: var(--indigo);
-  text-shadow: 0.12em 0.12em 0 var(--lemon);
+}
+/* yellow hard shadow: a copy of the name, shifted down-right, behind it.
+   Not a text-shadow: in the PDF, a text-shadow is written as a second copy of
+   the text, so ATS read "DDEELLPPHHIINNEE". The filter turns this copy into a
+   picture, so the PDF text contains the name only once. */
+.name::before {
+  content: attr(data-shadow);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding: inherit;
+  color: var(--lemon);
+  transform: translate(0.12em, 0.12em);
+  filter: opacity(1);
 }
 
 /* ---------- role, under the name: tilted sticker ---------- */
@@ -62,6 +75,9 @@
   background: var(--mint);
   box-shadow: 3px 3px 0 var(--ink);
   transform: rotate(-3deg);
+  /* drawn straight then rotated as a whole, so on screen the letters keep one
+     baseline (otherwise each letter is snapped to pixels on its own) */
+  will-change: transform;
   font-family: var(--font-head);
   font-size: 1rem;
   letter-spacing: 0.04em;
