@@ -15,15 +15,15 @@
   --paper: #fffdf7;
   --header-bg: #c3b1e1;
   --mint: #a8e6cf;
-  --pink: #ffb3c6;
+  --pink: #fdc7d5;
   --blue: #b0e0f3;
   --lemon: #fff5ba;
   --sun: #ffe27a; /* deeper yellow, for yellow on white */
 
   /* fonts */
-  --font-name: "Anton", Impact, sans-serif;
-  --font-head: "Archivo Black", "Arial Black", sans-serif;
-  --font-body: "Open Sans", Arial, sans-serif;
+  --font-name: "Anton", Impact, sans-serif; /* the name */
+  --font-head: "Archivo Black", "Arial Black", sans-serif; /* role, titles */
+  --font-body: "Open Sans", Arial, sans-serif; /* everything else */
 }
 
 @page {
@@ -106,7 +106,7 @@ strong {
   background: var(--pink);
   box-shadow: 4px 4px 0 var(--ink);
   transform: rotate(-2deg);
-  font-family: var(--font-name);
+  font-family: var(--font-head);
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 1.1;
