@@ -1,4 +1,22 @@
 <header class="top">
+  <!-- Memphis shapes, top right -->
+  <span class="deco top__squiggle" aria-hidden="true">
+    <svg viewBox="0 0 120 30">
+      <path
+        d="M4 15 q14 -14 28 0 t28 0 t28 0 t28 0"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="6"
+        stroke-linecap="round"
+      />
+    </svg>
+  </span>
+  <span class="deco top__triangle" aria-hidden="true">
+    <svg viewBox="0 0 50 44">
+      <polygon points="25,3 47,41 3,41" fill="currentColor" stroke-width="3" />
+    </svg>
+  </span>
+
   <h1 class="name">
     <span class="name__last">GAUTHIER HUGENDOBLER</span>
     <span class="name__first">DELPHINE</span>
@@ -22,6 +40,8 @@
             <use href="#shape" />
           </clipPath>
         </defs>
+        <!-- pink copy of the shape, shifted down-right like a hard shadow -->
+        <use href="#shape" class="picture__echo" x="22" y="18" />
         <use href="#shape" class="picture__shape" fill="#fff" />
         <polygon
           class="blob blob--yellow"
@@ -49,67 +69,72 @@
       <span class="contact__strip" aria-hidden="true"></span>
 
       <div class="contact__row">
-        <i
-          class="contact__icon fa-solid fa-comment-dots"
-          style="color: #3f4fa8"
-        ></i>
+        <span class="contact__icon contact__icon--lemon">
+          <i class="fa-solid fa-address-card"></i>
+        </span>
         <div>
           <p>gauthier.delphine@protonmail.com</p>
-          <p class="flags">
-            <svg
-              viewBox="0 0 3 2"
-              preserveAspectRatio="none"
-              aria-label="Français"
-            >
-              <rect width="1" height="2" fill="#002654" />
-              <rect x="1" width="1" height="2" fill="#fff" />
-              <rect x="2" width="1" height="2" fill="#CE1126" />
-            </svg>
-            <svg
-              viewBox="0 0 60 30"
-              preserveAspectRatio="none"
-              aria-label="Anglais"
-            >
-              <clipPath id="uk">
-                <path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z" />
-              </clipPath>
-              <rect width="60" height="30" fill="#012169" />
-              <path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6" />
-              <path
-                d="M0,0L60,30M60,0L0,30"
-                clip-path="url(#uk)"
-                stroke="#C8102E"
-                stroke-width="4"
-              />
-              <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10" />
-              <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6" />
-            </svg>
-            <svg
-              viewBox="0 0 3 2"
-              preserveAspectRatio="none"
-              aria-label="Espagnol"
-            >
-              <rect width="3" height="2" fill="#AA151B" />
-              <rect y=".5" width="3" height="1" fill="#F1BF00" />
-            </svg>
-            <svg
-              viewBox="0 0 16 10"
-              preserveAspectRatio="none"
-              aria-label="Suédois"
-            >
-              <rect width="16" height="10" fill="#006AA7" />
-              <rect x="5" width="2" height="10" fill="#FECC00" />
-              <rect y="4" width="16" height="2" fill="#FECC00" />
-            </svg>
-          </p>
+          <p>06 66 66 66 66</p>
         </div>
       </div>
 
       <div class="contact__row">
-        <i
-          class="contact__icon fa-solid fa-map-location-dot"
-          style="color: #e2675f"
-        ></i>
+        <span class="contact__icon contact__icon--blue">
+          <i class="fa-solid fa-comment-dots"></i>
+        </span>
+        <p class="flags">
+          <svg
+            viewBox="0 0 3 2"
+            preserveAspectRatio="none"
+            aria-label="Français"
+          >
+            <rect width="1" height="2" fill="#002654" />
+            <rect x="1" width="1" height="2" fill="#fff" />
+            <rect x="2" width="1" height="2" fill="#CE1126" />
+          </svg>
+          <svg
+            viewBox="0 0 60 30"
+            preserveAspectRatio="none"
+            aria-label="Anglais"
+          >
+            <clipPath id="uk">
+              <path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z" />
+            </clipPath>
+            <rect width="60" height="30" fill="#012169" />
+            <path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6" />
+            <path
+              d="M0,0L60,30M60,0L0,30"
+              clip-path="url(#uk)"
+              stroke="#C8102E"
+              stroke-width="4"
+            />
+            <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10" />
+            <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6" />
+          </svg>
+          <svg
+            viewBox="0 0 3 2"
+            preserveAspectRatio="none"
+            aria-label="Espagnol"
+          >
+            <rect width="3" height="2" fill="#AA151B" />
+            <rect y=".5" width="3" height="1" fill="#F1BF00" />
+          </svg>
+          <svg
+            viewBox="0 0 16 10"
+            preserveAspectRatio="none"
+            aria-label="Suédois"
+          >
+            <rect width="16" height="10" fill="#006AA7" />
+            <rect x="5" width="2" height="10" fill="#FECC00" />
+            <rect y="4" width="16" height="2" fill="#FECC00" />
+          </svg>
+        </p>
+      </div>
+
+      <div class="contact__row">
+        <span class="contact__icon contact__icon--pink">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </span>
         <div>
           <p>Villeurbanne</p>
           <p class="transport">
@@ -122,7 +147,9 @@
       </div>
 
       <div class="contact__row">
-        <i class="contact__icon fa-solid fa-book" style="color: #5b9bd5"></i>
+        <span class="contact__icon contact__icon--mint">
+          <i class="fa-solid fa-book"></i>
+        </span>
         <div>
           <p>License RPI (Alternance 2015 - Isitech - Lyon)</p>
           <p>BTS SIO (Alternance 2013 - Isitech - Lyon)</p>

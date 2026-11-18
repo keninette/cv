@@ -1,19 +1,51 @@
 /* ============================================================
-   PAGE 2 – about (know me)
+   PAGE 2 – about (know me): one pastel card per paragraph
    ============================================================ */
 .about {
-  background: var(--lavender-bg);
-  clip-path: polygon(0 1.5%, 100% 0, 100% 100%, 0 100%);
-  padding: 0.5rem 1.25rem 1rem;
-  color: var(--indigo);
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  padding: 2.25rem 1.5rem 1rem;
   font-style: italic;
   text-align: justify;
-  font-size: 0.875rem;
-  line-height: 1.35;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink);
 }
-.about .script-title {
-  margin: 0.25rem 0 0.5rem;
+.about__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.4rem 1.1rem 1rem;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
 }
-.about p + .script-title {
-  margin-top: 1rem;
+.about__card--mint {
+  background: var(--mint);
+}
+.about__card--pink {
+  background: var(--pink);
+}
+.about__card--blue {
+  background: var(--blue);
+}
+/* the title sticker sits across the top edge of its card */
+.about__card .title {
+  margin-top: -1.2rem;
+  background: var(--paper);
+  font-size: 1.5rem;
+}
+
+/* Memphis shapes, placed against the page (not the section) */
+.about__squiggle {
+  bottom: 2rem;
+  right: 2rem;
+  width: 7rem;
+  color: var(--pink);
+}
+.about__triangle {
+  bottom: 5rem;
+  left: 2.5rem;
+  width: 3rem;
+  color: var(--blue);
 }

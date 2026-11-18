@@ -1,33 +1,29 @@
 /* ============================================================
    CV – Delphine Gauthier
-   Two A4 pages.
+   Two A4 pages, 90s "Memphis" style: pastel colours, ink outlines
+   and hard (unblurred) shadows.
    Units: rem for sizes and spacing (1rem = 16px, the browser default),
    px for hairlines (borders, strokes), mm only for the paper sheet itself.
    ============================================================ */
 
 :root {
   /* palette */
+  --ink: #2e2a6b; /* outlines and hard shadows */
+  --indigo: #4a4bb8; /* name */
+  --text: #3d3a58;
+  --text-soft: #6a6688;
+  --paper: #fffdf7;
   --header-bg: #c3b1e1;
-  --lavender-bg: #eeeefb;
-  --card-bg: #eef5f8;
-  --indigo: #4a4bb8;
-  --salmon: #ee6a62;
-  --salmon-soft: #f9c9c4;
-  --yellow: #f6ee9c;
-  --teal: #a8cdd2;
+  --mint: #a8e6cf;
+  --pink: #ffb3c6;
+  --blue: #a0d8ef;
   --lemon: #fff5ba;
-  --text: #555;
-  --text-strong: #333;
-
-  /* timeline gradient (top -> bottom) */
-  --tl-top: #f08a73;
-  --tl-bottom: #9b5fd6;
+  --yellow: #f6ee9c; /* hidden header blobs */
+  --teal: #a8cdd2; /* hidden header blobs */
 
   /* fonts */
   --font-name: "Anton", Impact, sans-serif;
-  --font-display: "Caprasimo", Georgia, serif;
-  --font-script: "Shrikhand", Georgia, serif;
-  --font-serif: "Gelasio", Georgia, serif;
+  --font-head: "Archivo Black", "Arial Black", sans-serif;
   --font-body: "Open Sans", Arial, sans-serif;
 }
 
@@ -62,7 +58,7 @@ body {
   width: 210mm;
   height: 297mm;
   margin: 2.5rem auto;
-  background: #fff;
+  background: var(--paper);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -84,25 +80,38 @@ body {
 }
 
 strong {
-  color: var(--text-strong);
+  color: var(--ink);
 }
 
-/* ---------- shadowed script titles ---------- */
-.script-title {
-  font-family: var(--font-script);
+/* ---------- sticker titles: tilted box, ink outline, hard shadow ---------- */
+.title {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.05em 0.45em;
+  border: 2px solid var(--ink);
+  background: var(--pink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-2deg);
+  font-family: var(--font-name);
   font-weight: 400;
-  color: var(--indigo);
-  font-size: 1.65rem;
+  font-size: 1.9rem;
   line-height: 1.1;
-  text-align: center;
-  position: relative;
-  isolation: isolate;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
-.script-title::before {
-  content: attr(data-text);
+
+/* ---------- decorative Memphis shapes (inline SVGs) ----------
+   Each component places its own with a second class (top, right, width).
+   Shapes take their colour from "color", and their outline from "stroke". */
+.deco {
   position: absolute;
-  inset: 0;
-  transform: translateY(0.22em);
-  color: #fff;
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
+  stroke: var(--ink);
+}
+.deco svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }

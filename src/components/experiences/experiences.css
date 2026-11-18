@@ -1,20 +1,23 @@
 /* ============================================================
-   ROW 2 – experiences timeline
+   ROW 2 – experiences timeline (ends at the top of page 2: .xp--older)
    ============================================================ */
-.script-title--xp {
-  color: var(--salmon);
-  font-size: 2.1rem;
-}
-.script-title--xp::before {
-  color: var(--salmon-soft);
-}
-
 .xp {
   position: relative;
   padding: 1rem 1.5rem 1.5rem 1rem;
 }
-.xp .script-title--xp {
-  margin-bottom: 0.75rem;
+.xp .title {
+  margin-bottom: 1rem;
+}
+.xp--older {
+  padding-top: 1.75rem;
+}
+
+/* Memphis shape, left of the title */
+.xp__circle {
+  top: 0.6rem;
+  left: 2.2rem;
+  width: 2.6rem;
+  color: var(--lemon);
 }
 
 .timeline {
@@ -22,28 +25,40 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.1rem;
   padding-left: 2.625rem;
 }
-/* dashed gradient line */
+/* dotted line */
 .timeline::before {
   content: "";
   position: absolute;
   inset: 1rem auto 0 1.5rem;
-  width: 2px;
+  width: 3px;
   transform: translateX(-50%);
-  background: linear-gradient(var(--tl-top), var(--tl-bottom));
-  mask: repeating-linear-gradient(
-    #000 0 0.375rem,
-    transparent 0.375rem 0.625rem
-  );
+  background: radial-gradient(circle, var(--indigo) 1.4px, transparent 1.8px) 0
+    0 / 3px 8px;
 }
 
+/* each job is a card with a hard shadow in its own colour */
 .job {
+  --dot: var(--pink);
   position: relative;
+  padding: 0.55rem 0.85rem 0.65rem;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 5px 5px 0 var(--dot);
+}
+.job--mint {
+  --dot: var(--mint);
+}
+.job--blue {
+  --dot: var(--blue);
+}
+.job--lemon {
+  --dot: var(--lemon);
 }
 
-/* timeline dot */
+/* timeline marker: circle by default, square (mint), diamond (blue) */
 .job::before {
   content: "";
   position: absolute;
@@ -51,45 +66,32 @@
   top: 0.55rem;
   width: 1rem;
   height: 1rem;
+  border: 2px solid var(--ink);
   border-radius: 50%;
   transform: translateX(-50%);
-  background: var(--dot, #ccc);
+  background: var(--dot);
   z-index: 1;
 }
-.job:nth-child(1) {
-  --dot: #f8c7c1;
+.job--mint::before {
+  border-radius: 0;
 }
-.job:nth-child(2) {
-  --dot: #d9a3c4;
-}
-.job:nth-child(3) {
-  --dot: #c29bd8;
-}
-.job:nth-child(4) {
-  --dot: #9b6fd0;
+.job--blue::before {
+  border-radius: 0;
+  transform: translateX(-50%) rotate(45deg);
 }
 
-/* featured first job: ring dot + light card */
+/* current job: bigger marker, pink shadow outlined in ink */
 .job--featured {
-  isolation: isolate;
+  padding: 0.75rem 0.95rem 0.85rem;
+  box-shadow:
+    5px 5px 0 var(--pink),
+    5px 5px 0 2px var(--ink);
 }
 .job--featured::before {
-  width: 1.5rem;
-  height: 1.5rem;
-  top: 0.3rem;
-  border: 2px solid var(--salmon);
-  box-shadow: inset 0 0 0 0.25rem #fff;
-}
-.job--featured::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: -1.5rem -0.5rem -2.125rem -1.75rem;
-  background: var(--card-bg);
-  clip-path: polygon(3% 4%, 50% 0, 100% 3%, 100% 93%, 55% 100%, 0 96%);
-}
-.job--featured .job__body {
-  padding-left: 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  top: 0.35rem;
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .job__head {
@@ -97,33 +99,40 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.5rem;
 }
 .job__title {
-  font-family: var(--font-display);
+  font-family: var(--font-head);
   font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.1;
-  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  color: var(--ink);
 }
 .job__date {
   font-style: italic;
-  color: #666;
+  color: var(--text-soft);
 }
+/* team size badge */
 .job__meta {
-  font-size: 1.1rem;
-  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.45rem;
+  border: 2px solid var(--ink);
+  background: var(--dot);
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  color: var(--ink);
   white-space: nowrap;
-  padding-top: 0.25rem;
-}
-.job__meta i + i {
-  margin-left: 0.25rem;
 }
 
 .job__body {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 .job__body ul {
-  padding-left: 1.5rem;
-  list-style: disc;
+  padding-left: 1.25rem;
+}
+.job__body li::marker {
+  content: "▸ ";
+  color: var(--indigo);
 }
