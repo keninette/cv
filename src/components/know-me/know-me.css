@@ -23,8 +23,8 @@
 .about__card--mint {
   background: var(--mint);
 }
-.about__card--pink {
-  background: var(--pink);
+.about__card--lemon {
+  background: var(--lemon);
 }
 .about__card--blue {
   background: var(--blue);
