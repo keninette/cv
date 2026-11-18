@@ -21,7 +21,7 @@
   background:
     radial-gradient(rgb(255 255 255 / 0.6) 2px, transparent 2.5px) 0 0 / 14px
       14px,
-    var(--header-bg);
+    var(--violet);
   /* Cuts the rectangle into a shape. Each point is "x y", in % of the
      rectangle's width / height, starting at the top-left corner (0 0).
      Points go clockwise:

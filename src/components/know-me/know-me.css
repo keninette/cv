@@ -26,8 +26,8 @@
 .about__card--lemon {
   background: var(--lemon);
 }
-.about__card--blue {
-  background: var(--blue);
+.about__card--violet {
+  background: var(--violet);
 }
 /* the title sticker sits across the top edge of its card */
 .about__card .title {
