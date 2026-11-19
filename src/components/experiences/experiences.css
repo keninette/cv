@@ -3,7 +3,7 @@
    ============================================================ */
 .xp {
   position: relative;
-  padding: 1rem 1.5rem 1.5rem 1rem;
+  padding: 0rem 1.5rem 2rem 1rem;
 }
 .xp .title {
   margin-bottom: 1.5rem;
@@ -109,6 +109,12 @@
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+.job__data {
+  display: flex;
+  align-items: baseline;
+}
+
 .job__title {
   font-weight: 700;
   font-size: 1.1rem;
@@ -118,6 +124,7 @@
 .job__date {
   font-style: italic;
   color: var(--text-soft);
+  margin-left: 0.55rem;
 }
 /* team size badge */
 .job__meta {

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV Delphine Gauthier Hugendobler</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <!-- plain one-column layout, easy for an ATS to parse -->
+    <style>
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: #000;
+      }
+
+      h1 {
+        font-size: 20pt;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 13pt;
+        border-bottom: 1px solid #000;
+        margin: 16px 0 6px;
+      }
+
+      h3 {
+        font-size: 11pt;
+        margin: 12px 0 2px;
+      }
+
+      p,
+      ul {
+        margin: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Renders ats.md into the page. Like index.html, it needs a local server
+     or the --allow-file-access-from-files flag used by scripts/export-pdf.ps1. -->
+    <script>
+      fetch("ats.md")
+        .then((response) => response.text())
+        .then((markdown) => (document.body.innerHTML = marked.parse(markdown)));
+    </script>
+  </body>
+</html>
